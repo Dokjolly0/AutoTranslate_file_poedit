@@ -1,5 +1,4 @@
 import os
-import sys
 import time
 import re
 import logging
@@ -14,11 +13,7 @@ def setup_logging(log_dir, file_name):
     :param file_name: Nome del file di log.
     """
     if not os.path.exists(log_dir):
-        try:
-            os.makedirs(log_dir)
-        except Exception as e:
-            print(f"Errore durante la creazione della cartella di log: {e}")
-            return
+        os.makedirs(log_dir)
 
     log_file = os.path.join(log_dir, file_name)
     logging.basicConfig(
@@ -28,23 +23,6 @@ def setup_logging(log_dir, file_name):
             logging.FileHandler(log_file, mode='w', encoding='utf-8')
         ]
     )
-    
-def format_time(seconds):
-    """
-    Formatta il tempo in secondi in ore, minuti e secondi.
-
-    :param seconds: Tempo in secondi.
-    :return: Stringa formattata in ore, minuti e secondi.
-    """
-    if seconds < 60:
-        return f"{seconds:.2f} secondi"
-    elif seconds < 3600:
-        minutes, seconds = divmod(seconds, 60)
-        return f"{minutes:.0f} minuti e {seconds:.2f} secondi"
-    else:
-        hours, remainder = divmod(seconds, 3600)
-        minutes, seconds = divmod(remainder, 60)
-        return f"{hours:.0f} ore, {minutes:.0f} minuti e {seconds:.2f} secondi"
 
 def translate_po_file(file_path, target_language, delay=0.5, log_dir="log"):
     """
@@ -55,7 +33,6 @@ def translate_po_file(file_path, target_language, delay=0.5, log_dir="log"):
     :param delay: Ritardo (in secondi) tra le richieste di traduzione per evitare sovraccarichi.
     :param log_dir: Cartella in cui salvare i file di log.
     """
-    
     file_name = f"logging_{os.path.basename(file_path).split('.')[0]}_{target_language}_translation.log"
     setup_logging(log_dir, file_name)
     
@@ -151,28 +128,16 @@ def translate_po_file(file_path, target_language, delay=0.5, log_dir="log"):
 
     # Report finale
     print("\n--- Report Finale ---")
-    print(f"Tempo totale: {format_time(total_time)}")
+    print(f"Tempo totale: {total_time:.2f} secondi")
     print(f"Errori totali: {error_count}")
     if errors:
         print("\nDettagli errori:")
         for error in errors:
             print(f"- {error}")
-            
-def main():
+
+if __name__ == "__main__":
     # Chiedi il percorso del file e la lingua di destinazione
     file_path = input("Inserisci il percorso del file .po: ").strip()
     target_language = input("Inserisci il codice della lingua di destinazione (es. 'it', 'en', 'fr'): ").strip()
 
     translate_po_file(file_path, target_language)
-
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-       
-        print("\nProgramma interrotto.")
-        sys.exit()
-    except Exception as e:
-        print(f"Errore imprevisto: {e}")
-        logging.error(f"Errore imprevisto: {e}")
-        raise

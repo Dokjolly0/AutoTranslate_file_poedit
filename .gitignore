@@ -1,0 +1,24 @@
+# Ignora tutti i file .po
+*.po
+
+# Ignora tutti i file .mo
+*.mo
+
+# Ignora tutti i file .pot
+*.pot
+
+# Ignora cartelle configurazione ide
+.idea
+__pycache__
+.vscode
+
+# Ignora file di configurazione
+*.iml
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+
+# Ignora file di log
+*.log
