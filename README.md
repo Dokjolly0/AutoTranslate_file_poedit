@@ -77,4 +77,4 @@ Questo progetto è rilasciato sotto la privata.
 ---
 
 ### Contatti
-Per qualsiasi domanda o supporto, contatta: [tuo.email@esempio.com](mailto:U01.gruppoemme.net)
+Per qualsiasi domanda o supporto, contatta: [U01.gruppoemme.net](mailto:U01.gruppoemme.net)
