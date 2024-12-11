@@ -71,16 +71,10 @@ Se il file originale è `example.po` e la lingua di destinazione è `it`, il fil
 1. **File non trovato:** Assicurarsi che il percorso del file sia corretto.
 2. **Errore API:** Gli errori di traduzione possono derivare da problemi di connessione o limiti API. In tal caso, il programma utilizza la stringa originale come fallback.
 
-### Contribuire
-Se desideri migliorare il progetto, puoi:
-- Segnalare bug.
-- Proporre nuove funzionalità.
-- Contribuire con il codice.
-
 ### Licenza
-Questo progetto è rilasciato sotto la licenza MIT. Puoi usarlo liberamente per scopi personali e commerciali.
+Questo progetto è rilasciato sotto la privata.
 
 ---
 
 ### Contatti
-Per qualsiasi domanda o supporto, contatta: [tuo.email@esempio.com](mailto:tuo.email@esempio.com)
+Per qualsiasi domanda o supporto, contatta: [tuo.email@esempio.com](mailto:U01.gruppoemme.net)
