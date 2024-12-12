@@ -22,7 +22,7 @@ Per utilizzare il programma, è necessario installare:
 
 Puoi installarle eseguendo:
 ```bash
-pip install googletrans tqdm
+pip install googletrans==4.0.0rc1 tqdm
 ```
 
 ### Struttura del Programma
